@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        {% block title %}
+            Proyecto Symfony
+        {% endblock %}
+
+    </title>
+
+    <style>
+
+        *{
+
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        body{
+
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+
+        }
+
+        header{
+
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            padding: 40px 20px;
+
+        }
+
+        .contenedor-header{
+
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            max-width: 1100px;
+            margin: auto;
+
+        }
+
+        .perfil-box img{
+
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+
+        }
+
+        .info-header h1{
+
+            font-size: 34px;
+            margin-bottom: 10px;
+
+        }
+
+        .info-header h2{
+
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #38bdf8;
+
+        }
+
+        .frase{
+
+            margin-top: 15px;
+            font-style: italic;
+            color: #cbd5e1;
+
+        }
+
+        nav{
+
+            background: #020617;
+            padding: 18px;
+            text-align: center;
+
+        }
+
+        nav a{
+
+            color: white;
+            text-decoration: none;
+            margin: 0 18px;
+            font-weight: bold;
+            transition: 0.3s;
+
+        }
+
+        nav a:hover{
+
+            color: #38bdf8;
+
+        }
+
+        main{
+
+            max-width: 1100px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+
+        }
+
+        h2{
+
+            margin-bottom: 20px;
+            color: #0f172a;
+
+        }
+
+        table{
+
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+
+        }
+
+        table th,
+        table td{
+
+            border: 1px solid #cbd5e1;
+            padding: 14px;
+            text-align: center;
+
+        }
+
+        table th{
+
+            background: #0f172a;
+            color: white;
+
+        }
+
+        form input,
+        form textarea{
+
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+
+        }
+
+        button{
+
+            background: #0f172a;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+
+        }
+
+        button:hover{
+
+            background: #1e293b;
+
+        }
+
+        .alerta-exito{
+
+        background: #dcfce7;
+        color: #166534;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        border: 1px solid #86efac;
+        font-weight: bold;
+
+        }
+
+        .error-texto{
+
+        color: red;
+        font-size: 14px;
+        display: block;
+        margin-top: -15px;
+        margin-bottom: 15px;
+
+        }
+
+        footer{
+
+            background: #020617;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="contenedor-header">
+
+        <div class="perfil-box">
+
+            <img src="{{ asset('img/Perfil_Luffy.png') }}"
+                 alt="Perfil">
+
+        </div>
+
+        <div class="info-header">
+
+            <h1>
+                Jhoel Kevin Fernandez Chino
+            </h1>
+
+            <h2>
+                Ingeniería de Sistemas
+            </h2>
+
+            <p>
+                Universidad Privada San Francisco de Asís
+            </p>
+
+            <p>
+                Séptimo Semestre
+            </p>
+
+            <p class="frase">
+                "NO SUEÑES TU VIDA, VIVE TU SUEÑO"
+            </p>
+
+        </div>
+
+    </div>
+
+</header>
+
+<nav>
+
+    <a href="{{ path('inicio') }}">
+        Inicio
+    </a>
+
+    <a href="{{ path('sobre_mi') }}">
+        Sobre Mí
+    </a>
+
+    <a href="{{ path('materias') }}">
+        Materias
+    </a>
+
+    <a href="{{ path('contacto') }}">
+        Contacto
+    </a>
+
+</nav>
+
+<main>
+
+    {% block body %}
+    {% endblock %}
+
+</main>
+
+<footer>
+
+    © 2026 | Proyecto Symfony | Programación Avanzada
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title %}
+    Materias
+{% endblock %}
+
+{% block body %}
+
+<h2>
+    Materias Registradas
+</h2>
+
+<table>
+
+    <thead>
+
+        <tr>
+
+            <th>
+                Materia
+            </th>
+
+            <th>
+                Docente
+            </th>
+
+            <th>
+                Nota
+            </th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        {% for materia in materias %}
+
+        <tr>
+
+            <td>
+                {{ materia.nombre }}
+            </td>
+
+            <td>
+                {{ materia.docente }}
+            </td>
+
+            <td>
+                {{ materia.nota }}
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% endblock %}
